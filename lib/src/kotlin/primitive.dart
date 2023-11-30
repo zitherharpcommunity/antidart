@@ -1,3 +1,5 @@
+library kotlin.primitive;
+
 typedef Any = Object?;
 typedef Nothing = Never;
 typedef Int = int;
@@ -5,7 +7,6 @@ typedef Byte = int;
 typedef Short = int;
 typedef Long = int;
 typedef Float = double;
-
 typedef Double = double;
 typedef Char = String;
 typedef Boolean = bool;

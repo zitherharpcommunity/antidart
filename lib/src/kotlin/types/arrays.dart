@@ -2,8 +2,6 @@ extension MultiIterableExtension<T> on Iterable<Iterable<T>> {
   String contentDeepToString() => join(', ');
 
   Iterable<T> flatten() => expand((element) => element);
-
-  
 }
 
 extension NumberExtension on Iterable<double> {
@@ -15,7 +13,7 @@ extension ComparableExtension<T extends Comparable<T>> on Comparable<T> {
   bool operator >(T other) => compareTo(other) > 0;
   bool operator <=(T other) => compareTo(other) <= 0;
   bool operator >=(T other) => compareTo(other) >= 0;
-  
+
   /// Ensures that this value is not less than the specified [minimumValue].
   Comparable<T> coerceAtLeast(T minimumValue) {
     return this >= minimumValue ? this : minimumValue;

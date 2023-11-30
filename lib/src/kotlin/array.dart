@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'types.dart';
+import 'primitive.dart';
 
 extension ArrayCompanion<T> on Array<T> {
   Iterable<int> get indices => indexed.map((e) => e.$1);

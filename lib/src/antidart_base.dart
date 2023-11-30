@@ -1,4 +1,4 @@
-import 'package:antidart/src/kotlin/types.dart';
+import 'package:antidart/src/kotlin/primitive.dart';
 
 /// Prints a string representation of the object to the console.
 Unit println(Object? object) => print(object);
@@ -30,15 +30,18 @@ Unit repeat({required Int times, required Unit Function(Int) action}) {
     action(i);
   }
 }
+
 /// Throws an [IllegalArgumentException] if the [value] is false.
 void require({required Boolean value, Any Function()? lazyMessage}) {
   if (!value) throw Exception('IllegalStateException');
 }
+
 /// Throws an [IllegalStateException] with the result of calling [lazyMessage] if the value is null. Otherwise returns the not null value.
 T requireNotNull<T>(T? value, {Any Function()? lazyMessage}) {
   if (value == null) throw Exception('IllegalStateException');
   return value;
 }
+
 /// Throws an IllegalStateException with the result of calling lazyMessage if the value is false.
 void check(Boolean value, {Any Function()? lazyMessage}) {
   if (!value) throw Exception('IllegalStateException');
@@ -49,10 +52,12 @@ T checkNotNull<T>(T? value, {Any Function()? lazyMessage}) {
   if (value == null) throw Exception('IllegalStateException');
   return value;
 }
+
 // ignore: non_constant_identifier_names
 void TODO([String? reason]) {
   throw UnimplementedError(reason);
 }
+
 void when<T>(T value, T Function() func) {}
 
 extension CoroutineCompanion on Object {

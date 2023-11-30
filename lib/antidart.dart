@@ -1,7 +1,7 @@
 /// Support for doing something awesome.
 ///
 /// More dartdocs go here.
-library;
+library antidart;
 
 export 'src/antidart_base.dart';
 
