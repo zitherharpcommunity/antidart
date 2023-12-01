@@ -59,7 +59,7 @@ num floor(num x) => x.floor();
 num hypot(num x, num y) => math.sqrt(x * x + y * y);
 
 /// Computes the natural logarithm (base `E`) of the value [x].
-num ln(num x) => math.ln10;
+num ln(num x) => math.log(x) / math.e;
 
 /// Computes `ln(x + 1)`.
 num ln1p(num x) => ln(x + 1);
@@ -68,10 +68,10 @@ num ln1p(num x) => ln(x + 1);
 num log(num x) => math.log(x);
 
 /// Computes the common logarithm (base `10`) of the value [x].
-num log10(num x) => math.log(x);
+num log10(num x) => math.log(x) / math.ln10;
 
 /// Computes the common logarithm (base `2`) of the value [x].
-num log2(num x) => math.log(x);
+num log2(num x) => math.log(x) / math.ln2;
 
 /// Returns the greater of two values.
 num max(num a, num b) => math.max(a, b);
@@ -94,7 +94,7 @@ num tan(num x) => math.tan(x);
 /// Rounds the given value [x] to an integer towards zero.
 num truncate(num x) => x.truncate();
 
-extension MathCompanionObject on num {
+extension MathUtils on num {
   /// Returns the absolute value of this value.
   num get absoluteValue => abs(this);
 

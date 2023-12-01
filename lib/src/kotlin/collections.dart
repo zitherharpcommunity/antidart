@@ -1,6 +1,14 @@
+/// Collection types, such as [Iterable], [Collection], [List], [Set], [Map]
+/// and related top-level and extension functions.
+library kotlin.collections;
+
 import 'dart:math';
 
-import 'primitive.dart';
+import 'core.dart';
+
+/// Data class representing a value from a collection or sequence,
+/// along with its index in that collection or sequence.
+typedef IndexedValue<T> = (Int, T);
 
 extension ArrayCompanion<T> on Array<T> {
   Iterable<int> get indices => indexed.map((e) => e.$1);
@@ -130,7 +138,9 @@ extension ArrayCompanion<T> on Array<T> {
   List<List<T>> chunked(int size) {
     final result = <List<T>>[];
     for (var i = 0; i < length; i += size) {
-      result.add(sublist(i, min(i + size, length)));
+      result.add(
+        sublist(i, min(i + size, length)),
+      );
     }
     return result;
   }

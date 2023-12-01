@@ -1,17 +1,45 @@
-import 'package:antidart/src/kotlin/primitive.dart';
+/// [**Kotlin Standard Library**](https://kotlinlang.org/api/latest/jvm/stdlib/#kotlin-standard-library)
+///
+/// The **Kotlin Standard Library** provides living essentials for everyday work with Kotlin.
+/// These include:
+///
+/// * Higher-order functions implementing idiomatic patterns
+/// ([let](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/let.html),
+/// [apply](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/apply.html),
+/// [use](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/use.html),
+/// [synchronized](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/apply.html), etc).
+/// * Extension functions providing querying operations for collections (eager) and sequences (lazy).
+/// * Various utilities for working with strings and char sequences.
+/// * Extensions for JDK classes making it convenient to work with files, IO, and threading.
+///
+/// See examples at [here](https://github.com/kotlin/antidart/tree/master/examples).
+library kotlin;
 
-/// Prints a string representation of the object to the console.
-Unit println(Object? object) => print(object);
+import '/src/kotlin/core.dart';
 
-List listOf(List list) => list;
+export 'kotlin/annotation.dart';
+export 'kotlin/collections.dart';
+export 'kotlin/companion.dart';
+export 'kotlin/comparisons.dart';
+export 'kotlin/core.dart';
+export 'kotlin/coroutines.dart';
+export 'kotlin/io.dart';
+export 'kotlin/math.dart';
+export 'kotlin/random.dart';
+export 'kotlin/reflect.dart';
+export 'kotlin/system.dart';
+export 'kotlin/text.dart';
+export 'kotlin/time.dart';
+
+List<T> listOf<T>(List<T> list) => list;
 
 /// Returns an array containing the specified elements.
-Array arrayOf(Array array) => array;
+Array<T> arrayOf<T>(Array<T> array) => array;
 
 /// Returns an array of objects of the given type with the given size, initialized with null values.
 Array<Unit> arrayOfNulls(Int length) => Array.filled(length, null);
 Array<T> emptyArray<T>() => Array<T>.empty();
-ArrayList arrayListOf(ArrayList list) => list;
+ArrayList<T> arrayListOf<T>(ArrayList<T> list) => list;
 BooleanArray booleanArrayOf(BooleanArray array) => array;
 ByteArray byteArrayOf(ByteArray array) => array;
 CharArray charArrayOf(CharArray array) => array;
@@ -21,7 +49,7 @@ FloatArray floatArrayOf(FloatArray array) => array;
 LongArray longArrayOf(LongArray array) => array;
 ShortArray shortArrayOf(ShortArray array) => array;
 T enumValueOf<T extends Enum>(String name) => enumValueOf(name);
-Map mapOf(Map map) => map;
+Map<K, V> mapOf<K, V>(Map<K, V> map) => map;
 Nothing error(Any message) => throw Exception();
 
 /// Executes the given function [action] specified number of [times].
@@ -32,7 +60,7 @@ Unit repeat({required Int times, required Unit Function(Int) action}) {
 }
 
 /// Throws an [IllegalArgumentException] if the [value] is false.
-void require({required Boolean value, Any Function()? lazyMessage}) {
+Unit require({required Boolean value, Any Function()? lazyMessage}) {
   if (!value) throw Exception('IllegalStateException');
 }
 
@@ -43,7 +71,7 @@ T requireNotNull<T>(T? value, {Any Function()? lazyMessage}) {
 }
 
 /// Throws an IllegalStateException with the result of calling lazyMessage if the value is false.
-void check(Boolean value, {Any Function()? lazyMessage}) {
+Unit check(Boolean value, {Any Function()? lazyMessage}) {
   if (!value) throw Exception('IllegalStateException');
 }
 
@@ -54,23 +82,6 @@ T checkNotNull<T>(T? value, {Any Function()? lazyMessage}) {
 }
 
 // ignore: non_constant_identifier_names
-void TODO([String? reason]) {
+Unit TODO([String? reason]) {
   throw UnimplementedError(reason);
-}
-
-void when<T>(T value, T Function() func) {}
-
-extension CoroutineCompanion on Object {
-  T? let<T>(T Function() f) => f();
-
-  T also<T>(T Function() f) => f();
-
-  T run<T>(T Function() f) => f();
-
-  T apply<T>(T value, T Function() func) => value;
-}
-
-void test() {
-  int? a = null;
-  a?.let(() => null);
 }

@@ -1,6 +1,6 @@
-import 'primitive.dart';
+import 'core.dart';
 
-extension AnyCompanion on Any {
+extension CompanionObject on Any {
   dynamic asDynamic() => this;
 
   /// Casts the given value to the class represented by this [T] object.
@@ -22,3 +22,4 @@ extension AnyCompanion on Any {
   Any takeUnless<T>(bool Function(Any) predicate) =>
       predicate(this) ? null : this;
 }
+

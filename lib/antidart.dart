@@ -3,6 +3,6 @@
 /// More dartdocs go here.
 library antidart;
 
-export 'src/antidart_base.dart';
+export 'src/kotlin.dart';
 
 // TODO: Export any libraries intended for clients of this package.

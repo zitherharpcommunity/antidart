@@ -1,4 +1,5 @@
-library kotlin.primitive;
+/// Core functions and types, available on all supported platforms.
+library kotlin.core;
 
 typedef Any = Object?;
 typedef Nothing = Never;
@@ -10,6 +11,9 @@ typedef Float = double;
 typedef Double = double;
 typedef Char = String;
 typedef Boolean = bool;
+typedef UByte = int;
+typedef UInt = Int;
+typedef ULong = Long;
 typedef Array<T> = List<T>;
 typedef ArrayList<T> = Array<T>;
 typedef BooleanArray<T> = Array<Boolean>;
