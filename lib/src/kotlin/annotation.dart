@@ -76,6 +76,7 @@ enum AnnotationTarget {
 
 @Target([AnnotationTarget.ANNOTATION_CLASS])
 final class Retention {
+  /// The necessary annotation retention `RUNTIME`, `BINARY` or `SOURCE`.
   final AnnotationRetention value;
 
   /// This meta-annotation determines whether an annotation
@@ -84,24 +85,31 @@ final class Retention {
   const Retention({this.value = AnnotationRetention.RUNTIME});
 }
 
+/// This meta-annotation indicates the kinds of code elements
+/// which are possible targets of an annotation.
+///
+/// If the target meta-annotation is not present on an annotation declaration,
+/// the annotation is applicable to the following elements:
+/// `CLASS`, `PROPERTY`, `FIELD`, `LOCAL_VARIABLE`, `VALUE_PARAMETER`,
+/// `CONSTRUCTOR`, `FUNCTION`, `PROPERTY_GETTER`, `PROPERTY_SETTER`.
 final class Target {
+  /// The list of allowed annotation targets.
   final Array<AnnotationTarget> allowedTargets;
 
-  /// This meta-annotation indicates the kinds of code elements 
-  /// which are possible targets of an annotation.
-  ///
-  /// If the target meta-annotation is not present on an annotation declaration, 
-  /// the annotation is applicable to the following elements: 
-  /// [CLASS], [PROPERTY], [FIELD], [LOCAL_VARIABLE], [VALUE_PARAMETER],
-  /// [CONSTRUCTOR], [FUNCTION], [PROPERTY_GETTER], [PROPERTY_SETTER].
+  /// This meta-annotation indicates the kinds of code elements which are possible targets of an annotation.
   const Target(this.allowedTargets);
 }
 
+/// This meta-annotation determines that an annotation is a part of public API
+/// and therefore should be included in the generated documentation
+/// for the element to which the annotation is applied.
 @Target([AnnotationTarget.ANNOTATION_CLASS])
 final class _MustBeDocumented {
   const _MustBeDocumented();
 }
 
+/// This meta-annotation determines that an annotation
+/// is applicable twice or more on a single code element
 @Target([AnnotationTarget.ANNOTATION_CLASS])
 final class _Repeatable {
   const _Repeatable();
