@@ -72,7 +72,7 @@ extension ArrayCompanion<T> on Array<T> {
     String separator = ', ',
     String prefix = '',
     String postfix = '',
-    int limit = -1,
+    Int limit = -1,
     String truncated = '...',
     String Function(T)? transform,
   }) {

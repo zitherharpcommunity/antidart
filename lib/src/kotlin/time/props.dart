@@ -1,3 +1,5 @@
+part of kotlin.time;
+
 extension TimeProps on num {
   /// Returns a [Duration] equal to this number of days.
   @Deprecated(

@@ -8,22 +8,19 @@ import 'package:antidart/src/kotlin.dart';
 /// Terminates the currently running process.
 Nothing exitProcess({required Int status}) => exit(status);
 
-@Deprecated('Use measureTime() or TimeSource.Monotonic.markNow() instead.')
-
 /// Gets current system time in microseconds since certain moment in the past,
 /// only delta between two subsequent calls makes sense.
-Long getTimeMicros() => DateTime.timestamp().microsecondsSinceEpoch;
-
 @Deprecated('Use measureTime() or TimeSource.Monotonic.markNow() instead.')
+Long getTimeMicros() => DateTime.timestamp().microsecondsSinceEpoch;
 
 /// Gets current system time in milliseconds since certain moment in the past,
 /// only delta between two subsequent calls makes sense.
-Long getTimeMillis() => DateTime.timestamp().millisecondsSinceEpoch;
-
 @Deprecated('Use measureTime() or TimeSource.Monotonic.markNow() instead.')
+Long getTimeMillis() => DateTime.timestamp().millisecondsSinceEpoch;
 
 /// Gets current system time in seconds since certain moment in the past,
 /// only delta between two subsequent calls makes sense.
+@Deprecated('Use measureTime() or TimeSource.Monotonic.markNow() instead.')
 Long getTimeNanos() => DateTime.timestamp().microsecondsSinceEpoch ~/ 1000;
 
 /// Executes the given [block] and returns elapsed time in milliseconds.

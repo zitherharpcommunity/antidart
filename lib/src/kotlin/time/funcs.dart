@@ -1,4 +1,4 @@
-import 'package:antidart/src/kotlin.dart';
+part of kotlin.time;
 
 /// Executes the given function [block] and returns the duration of elapsed time interval.
 Duration measureTime(Unit Function() block) {

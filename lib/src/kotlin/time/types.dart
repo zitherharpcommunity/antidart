@@ -1,3 +1,5 @@
+part of kotlin.time;
+
 /// Data class representing a result of executing an action,
 /// along with the duration of elapsed time interval.
 typedef TimedValue<T> = (Duration, T);

@@ -6,11 +6,11 @@ import '/src/kotlin.dart';
 /// This meta-annotation determines that an annotation is a part of public API
 /// and therefore should be included in the generated documentation
 /// for the element to which the annotation is applied.
-const mustBeDocumented = _MustBeDocumented();
+const MustBeDocumented = _MustBeDocumented();
 
 /// This meta-annotation determines that an annotation
 /// is applicable twice or more on a single code element
-const repeatable = _Repeatable();
+const Repeatable = _Repeatable();
 
 /// Contains the list of possible annotation's retentions.
 ///
@@ -74,7 +74,9 @@ enum AnnotationTarget {
   TYPEALIAS;
 }
 
-@Target([AnnotationTarget.ANNOTATION_CLASS])
+@Target([
+  AnnotationTarget.ANNOTATION_CLASS,
+])
 final class Retention {
   /// The necessary annotation retention `RUNTIME`, `BINARY` or `SOURCE`.
   final AnnotationRetention value;
@@ -82,7 +84,7 @@ final class Retention {
   /// This meta-annotation determines whether an annotation
   /// is stored in binary output and visible for reflection.
   /// By default, both are true.
-  const Retention({this.value = AnnotationRetention.RUNTIME});
+  const Retention([this.value = AnnotationRetention.RUNTIME]);
 }
 
 /// This meta-annotation indicates the kinds of code elements
@@ -96,21 +98,26 @@ final class Target {
   /// The list of allowed annotation targets.
   final Array<AnnotationTarget> allowedTargets;
 
-  /// This meta-annotation indicates the kinds of code elements which are possible targets of an annotation.
+  /// This meta-annotation indicates the kinds of code elements
+  /// which are possible targets of an annotation.
   const Target(this.allowedTargets);
 }
 
 /// This meta-annotation determines that an annotation is a part of public API
 /// and therefore should be included in the generated documentation
 /// for the element to which the annotation is applied.
-@Target([AnnotationTarget.ANNOTATION_CLASS])
+@Target([
+  AnnotationTarget.ANNOTATION_CLASS,
+])
 final class _MustBeDocumented {
   const _MustBeDocumented();
 }
 
 /// This meta-annotation determines that an annotation
 /// is applicable twice or more on a single code element
-@Target([AnnotationTarget.ANNOTATION_CLASS])
+@Target([
+  AnnotationTarget.ANNOTATION_CLASS,
+])
 final class _Repeatable {
   const _Repeatable();
 }

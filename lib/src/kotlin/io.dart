@@ -6,6 +6,9 @@ import 'dart:io';
 
 import '/src/kotlin.dart';
 
+export '/src/kotlin/io/encoding.dart';
+export '/src/kotlin/io/path.dart';
+
 /// Returns the default buffer size when working with buffered streams.
 const int DEFAULT_BUFFER_SIZE = 8 * 1024;
 
@@ -38,7 +41,9 @@ File createTempFile({
   String? suffix,
   File? directory,
 }) {
-  return File('${directory?.path ?? ''}/$prefix${suffix ?? ''}');
+  return File(
+    '${directory?.path ?? ''}/$prefix${suffix ?? ''}',
+  );
 }
 
 /// Prints the given [message] to the standard output stream.
