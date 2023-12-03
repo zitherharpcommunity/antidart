@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 /// [**Kotlin Standard Library**](https://kotlinlang.org/api/latest/jvm/stdlib/#kotlin-standard-library)
 ///
 /// The **Kotlin Standard Library** provides living essentials for everyday work with Kotlin.
@@ -13,39 +15,39 @@
 /// * Extensions for JDK classes making it convenient to work with files, IO, and threading.
 ///
 /// See examples at [here](https://play.kotlinlang.org/byExample/overview).
-// ignore_for_file: non_constant_identifier_names
-
 library kotlin;
 
-import '/src/kotlin/core.dart';
+import '/kotlin.dart';
 
-export 'kotlin/annotation.dart';
-export 'kotlin/browser.dart';
-export 'kotlin/collections.dart';
-export 'kotlin/companion.dart';
-export 'kotlin/comparisons.dart';
-export 'kotlin/core.dart';
-export 'kotlin/coroutines.dart';
-export 'kotlin/dom.dart';
-export 'kotlin/experimental.dart';
-export 'kotlin/io.dart';
-export 'kotlin/math.dart';
-export 'kotlin/native.dart';
-export 'kotlin/random.dart';
-export 'kotlin/ranges.dart';
-export 'kotlin/reflect.dart';
-export 'kotlin/streams.dart';
-export 'kotlin/system.dart';
-export 'kotlin/text.dart';
-export 'kotlin/time.dart';
+export 'src/kotlin/annotation.dart';
+export 'src/kotlin/browser.dart';
+export 'src/kotlin/collections.dart';
+export 'src/kotlin/concurrent.dart';
+export 'src/kotlin/comparisons.dart';
+export 'src/kotlin/core.dart';
+export 'src/kotlin/coroutines.dart';
+export 'src/kotlin/dom.dart';
+export 'src/kotlin/experimental.dart';
+export 'src/kotlin/io.dart';
+export 'src/kotlin/jvm.dart';
+export 'src/kotlin/math.dart';
+export 'src/kotlin/native.dart';
+export 'src/kotlin/random.dart';
+export 'src/kotlin/ranges.dart';
+export 'src/kotlin/reflect.dart';
+export 'src/kotlin/streams.dart';
+export 'src/kotlin/system.dart';
+export 'src/kotlin/test.dart';
+export 'src/kotlin/text.dart';
+export 'src/kotlin/time.dart';
 
 List<T> listOf<T>(List<T> list) => list;
 
 /// Returns an array containing the specified elements.
 Array<T> arrayOf<T>(Array<T> array) => array;
 
-/// Returns an array of objects of the given type with the given size, initialized with null values.
-Array<Unit> arrayOfNulls(Int length) => Array.filled(length, null);
+/// Returns an array of objects of the given type with the given [size], initialized with `null` values.
+Array<Unit> arrayOfNulls(Int size) => Array.filled(size, null);
 
 /// Returns an empty array of the specified type [T].
 Array<T> emptyArray<T>() => Array<T>.empty();
@@ -137,3 +139,33 @@ T checkNotNull<T>(T? value, {Any Function()? lazyMessage}) {
 Unit TODO([String? reason]) => throw NotImplementedError(reason);
 
 typedef NotImplementedError = UnimplementedError;
+
+/// The base class for all errors and exceptions.
+///
+/// Only instances of this class can be thrown or caught.
+base class Throwable {
+  /// The detail message string.
+  final String? message;
+
+  ///  The cause of this throwable.
+  final Throwable? cause;
+
+  /// The base class for all errors and exceptions.
+  ///
+  /// Only instances of this class can be thrown or caught.
+  const Throwable({this.message, this.cause});
+
+  /// Returns an array of stack trace strings representing the stack trace pertaining to this throwable.
+  @experimentalNativeApi
+  Array<String> getStackTrace() => throw UnimplementedError();
+
+  /// Prints the detailed description of this throwable to the standard error output.
+  ///
+  /// Note that the format of the output is not stable and may change in the future.
+  Unit printStackTrace() => throw UnimplementedError();
+
+  /// Returns the short description of this throwable consisting
+  /// of the exception class name (fully qualified if possible)
+  /// followed by the exception message if it is not null.
+  external String toString();
+}

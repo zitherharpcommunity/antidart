@@ -5,7 +5,10 @@ library kotlin.coroutines;
 
 import 'dart:html';
 
-import '/src/kotlin.dart';
+import '/kotlin.dart';
+
+export 'coroutines/cancellation.dart';
+export 'coroutines/intrinsics.dart';
 
 /// Classes and interfaces marked with this annotation are restricted
 /// when used as receivers for extension `suspend` functions.
@@ -13,7 +16,7 @@ import '/src/kotlin.dart';
 /// These `suspend` extensions can only invoke other member
 /// or extension `suspend` functions on this particular receiver
 /// and are restricted from calling arbitrary suspension functions.
-const RestrictsSuspension = _RestrictsSuspension();
+const restrictsSuspension = RestrictsSuspension();
 
 /// Calls the specified function [block] and returns its result.
 R run<R>(R Function() block) => block();
@@ -21,7 +24,7 @@ R run<R>(R Function() block) => block();
 /// Executes the given function [block] while holding the monitor of the given object [lock].
 R synchronized<R>(Any lock, R Function() block) => block();
 
-Unit when<T>(T Function(T) block) {}
+Unit when<T>(T Function(T it) block) {}
 
 /// Base class for [CoroutineContext.element] implementations.
 abstract class AbstractCoroutineContextElement implements Element {
@@ -29,6 +32,26 @@ abstract class AbstractCoroutineContextElement implements Element {
   final KeyCode key;
 
   const AbstractCoroutineContextElement({required this.key});
+}
+
+/// Interface representing a continuation after a suspension point that returns a value of type [T].
+abstract interface class Continuation<T> {
+  /// The context of the coroutine that corresponds to this continuation.
+  CoroutineContext get context;
+
+  /// Resumes the execution of the corresponding coroutine passing a successful
+  /// or failed result as the return value of the last suspension point.
+  fun resumeWith(Result<T> result);
+}
+
+extension ContinuationExtension<T> on Continuation<T> {
+  /// Resumes the execution of the corresponding coroutine
+  /// passing [value] as the return value of the last suspension point.
+  fun resume(T value) => Result.success(value);
+
+  /// Resumes the execution of the corresponding coroutine
+  /// so that the [exception] is re-thrown right after the last suspension point.
+  fun resumeWithException(Throwable exception) => Result.failure(exception);
 }
 
 /// Persistent context for the coroutine.
@@ -59,24 +82,24 @@ abstract interface class CoroutineContext<E> {
 @Target([
   AnnotationTarget.ANNOTATION_CLASS,
 ])
-final class _RestrictsSuspension {
-  const _RestrictsSuspension();
+final class RestrictsSuspension {
+  const RestrictsSuspension();
 }
 
-extension CoroutineUtils on Any {
+extension CoroutineExtension on Any {
   /// Calls the specified function [block] with this value as its argument and returns this value.
   T also<T>(Unit Function() block) => throw UnimplementedError();
 
   /// Calls the specified function [block] with this value as its receiver and returns this value.
-  T apply<T>(T Function(T) block) => block(this as T);
+  T apply<T>(T Function(T it) block) => block(this as T);
 
   /// Calls the specified function [block] with this value as its argument and returns its result.
-  R let<T, R>(R Function(T) block) => throw UnimplementedError();
+  R let<T, R>(R Function(T it) block) => throw UnimplementedError();
 
   /// Calls the specified function [block] with this value as its receiver and returns its result.
   R run<R>(R Function() block) => block();
 
   /// Executes the given [block] function on this resource
   /// and then closes it down correctly whether an exception is thrown or not.
-  R use<R>(R Function(Any) block) => block(this);
+  R use<R>(R Function(Any it) block) => block(this);
 }

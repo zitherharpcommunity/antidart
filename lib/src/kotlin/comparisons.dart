@@ -1,7 +1,7 @@
 /// Helper functions for creating [Comparator] instances.
 library kotlin.comparisons;
 
-import '/src/kotlin.dart';
+import '../../kotlin.dart';
 
 extension MultiIterableExtension<T> on Iterable<Iterable<T>> {
   String contentDeepToString() => join(', ');
@@ -9,7 +9,7 @@ extension MultiIterableExtension<T> on Iterable<Iterable<T>> {
   Iterable<T> flatten() => expand((element) => element);
 }
 
-extension NumberExtension on Iterable<double> {
+extension NumbersExtension on Iterable<double> {
   double sum() => reduce((value, element) => value + element);
 }
 

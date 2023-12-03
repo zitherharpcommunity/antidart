@@ -1,16 +1,16 @@
 /// Library support for the Kotlin annotation facility.
 library kotlin.annotation;
 
-import '/src/kotlin.dart';
+import '/kotlin.dart';
 
 /// This meta-annotation determines that an annotation is a part of public API
 /// and therefore should be included in the generated documentation
 /// for the element to which the annotation is applied.
-const MustBeDocumented = _MustBeDocumented();
+const mustBeDocumented = MustBeDocumented();
 
 /// This meta-annotation determines that an annotation
 /// is applicable twice or more on a single code element
-const Repeatable = _Repeatable();
+const repeatable = Repeatable();
 
 /// Contains the list of possible annotation's retentions.
 ///
@@ -109,8 +109,8 @@ final class Target {
 @Target([
   AnnotationTarget.ANNOTATION_CLASS,
 ])
-final class _MustBeDocumented {
-  const _MustBeDocumented();
+final class MustBeDocumented {
+  const MustBeDocumented();
 }
 
 /// This meta-annotation determines that an annotation
@@ -118,6 +118,6 @@ final class _MustBeDocumented {
 @Target([
   AnnotationTarget.ANNOTATION_CLASS,
 ])
-final class _Repeatable {
-  const _Repeatable();
+final class Repeatable {
+  const Repeatable();
 }

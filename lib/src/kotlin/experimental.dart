@@ -1,23 +1,23 @@
 /// Experimental APIs, subject to change in future versions of Kotlin.
 library kotlin.experimental;
 
-import '/src/kotlin.dart';
+import '/kotlin.dart';
 
 /// This annotation marks the Kotlin/Native-only standard library API
 /// that is considered experimental and is not subject to the
 /// [general compatibility guarantees](https://kotlinlang.org/docs/components-stability.html#github-badges-for-kotlin-components)
 /// given for the standard library: the behavior of such API may be changed
 /// or the API may be removed completely in any further release.
-const ExperimentalNativeApi = _ExperimentalNativeApi();
+const experimentalNativeApi = ExperimentalNativeApi();
 
 /// This annotation marks the experimental [ObjCName] annotation.
-const ExperimentalObjCName = _ExperimentalObjCName();
+const experimentalObjCName = ExperimentalObjCName();
 
 /// This annotation marks the experimental Objective-C export refinement annotations.
-const ExperimentalObjCRefinement = _ExperimentalObjCRefinement();
+const experimentalObjCRefinement = ExperimentalObjCRefinement();
 
 /// The experimental marker for type inference augmenting annotations.
-const ExperimentalTypeInference = _ExperimentalTypeInference();
+const experimentalTypeInference = ExperimentalTypeInference();
 
 /// This annotation marks the Kotlin/Native-only standard library API
 /// that is considered experimental and is not subject
@@ -41,27 +41,27 @@ const ExperimentalTypeInference = _ExperimentalTypeInference();
   AnnotationTarget.PROPERTY_SETTER,
   AnnotationTarget.TYPEALIAS,
 ])
-class _ExperimentalNativeApi {
-  const _ExperimentalNativeApi();
+class ExperimentalNativeApi {
+  const ExperimentalNativeApi();
 }
 
 @Target([
   AnnotationTarget.ANNOTATION_CLASS,
 ])
-class _ExperimentalObjCName {
-  const _ExperimentalObjCName();
+class ExperimentalObjCName {
+  const ExperimentalObjCName();
 }
 
 @Target([
   AnnotationTarget.ANNOTATION_CLASS,
 ])
-class _ExperimentalObjCRefinement {
-  const _ExperimentalObjCRefinement();
+class ExperimentalObjCRefinement {
+  const ExperimentalObjCRefinement();
 }
 
 @Target([
   AnnotationTarget.ANNOTATION_CLASS,
 ])
-class _ExperimentalTypeInference {
-  const _ExperimentalTypeInference();
+class ExperimentalTypeInference {
+  const ExperimentalTypeInference();
 }

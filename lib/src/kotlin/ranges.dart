@@ -2,7 +2,7 @@
 /// Progressions and related top-level and extension functions.
 library kotlin.ranges;
 
-import '/src/kotlin.dart';
+import '../../kotlin.dart';
 
 /// A range of values of type [Int].
 typedef IntRange = (Int, Int);

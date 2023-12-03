@@ -1,14 +1,14 @@
 library kotlin.io.path;
 
-import '/src/kotlin.dart';
+import '/kotlin.dart';
 
 /// This annotation marks the experimental API for [Path] and decoding
 /// between binary data and printable ASCII character sequences.
-const ExperimentalPathApi = _ExperimentalPathApi();
+const experimentalPathApi = ExperimentalPathApi();
 
 /// The result of the `copyAction` function passed to [Path.copyToRecursively]
 /// that specifies further actions when copying an entry.
-@ExperimentalPathApi
+@experimentalPathApi
 enum CopyActionResult {
   /// Continue with the next entry in the traversal order.
   CONTINUE,
@@ -24,7 +24,7 @@ enum CopyActionResult {
 
 /// The result of the `onError` function passed to [Path.copyToRecursively]
 /// that specifies further actions when an exception occurs.
-@ExperimentalPathApi
+@experimentalPathApi
 enum OnErrorResult {
   /// If the entry that caused the error is a directory, skip the directory and its content,
   /// and continue with the next entry outside this directory in the traversal order.
@@ -41,7 +41,7 @@ enum OnErrorResult {
 /// The options can be combined to form the walk order and behavior needed.
 ///
 /// Note that this enumeration is not exhaustive and new cases might be added in the future.
-@ExperimentalPathApi
+@experimentalPathApi
 enum PathWalkOption {
   /// Visits directories as well.
   INCLUDE_DIRECTORIES,
@@ -72,6 +72,6 @@ enum PathWalkOption {
   AnnotationTarget.PROPERTY_SETTER,
   AnnotationTarget.TYPEALIAS,
 ])
-class _ExperimentalPathApi {
-  const _ExperimentalPathApi();
+class ExperimentalPathApi {
+  const ExperimentalPathApi();
 }

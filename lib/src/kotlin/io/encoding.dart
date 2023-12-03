@@ -1,6 +1,6 @@
 library kotlin.io.encoding;
 
-import '/src/kotlin.dart';
+import '/kotlin.dart';
 
 /// This annotation marks the experimental API for encoding and decoding
 /// between binary data and printable ASCII character sequences.
@@ -21,9 +21,9 @@ import '/src/kotlin.dart';
   AnnotationTarget.PROPERTY_SETTER,
   AnnotationTarget.TYPEALIAS,
 ])
-class _ExperimentalEncodingApi {
-  const _ExperimentalEncodingApi();
+class ExperimentalEncodingApi {
+  const ExperimentalEncodingApi();
 }
 /// This annotation marks the experimental API for encoding and decoding 
 /// between binary data and printable ASCII character sequences.
-const ExperimentalEncodingApi = _ExperimentalEncodingApi();
+const experimentalEncodingApi = ExperimentalEncodingApi();

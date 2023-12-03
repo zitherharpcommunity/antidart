@@ -4,7 +4,7 @@ library kotlin.io;
 import 'dart:convert';
 import 'dart:io';
 
-import '/src/kotlin.dart';
+import '../../kotlin.dart';
 
 export '/src/kotlin/io/encoding.dart';
 export '/src/kotlin/io/path.dart';

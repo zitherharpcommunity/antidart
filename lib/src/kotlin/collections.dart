@@ -10,6 +10,16 @@ import 'core.dart';
 /// along with its index in that collection or sequence.
 typedef IndexedValue<T> = (Int, T);
 
+/// A generic collection of elements.
+///
+/// Methods in this interface support only read-only access to the collection.
+///
+/// Read/write access is supported through the [MutableCollection] interface.
+///
+/// - [E] - the type of elements contained in the collection.
+/// The collection is covariant in its element type.
+abstract interface class Collection<E> extends Iterable<E> {}
+
 extension ArrayCompanion<T> on Array<T> {
   Iterable<int> get indices => indexed.map((e) => e.$1);
 
@@ -49,14 +59,14 @@ extension ArrayCompanion<T> on Array<T> {
       where(predicate as bool Function(T));
 
   /// Returns a list containing only elements matching the given predicate.
-  Iterable<T> filterNot(bool Function(T) predicate) => where(predicate);
+  Iterable<T> filterNot(bool Function(T it) predicate) => where(predicate);
 
   /// Returns the first element matching the given predicate, or null if no such element was found.
-  T? find(bool Function(T?) predicate) =>
+  T? find(bool Function(T? it) predicate) =>
       cast<T?>().firstWhere(predicate, orElse: () => null);
 
   /// Returns the last element matching the given predicate, or null if no such element was found.
-  T? findLast(bool Function(T?) predicate) =>
+  T? findLast(bool Function(T? it) predicate) =>
       cast<T?>().lastWhere(predicate, orElse: () => null);
   T get(int index) => elementAt(index);
 
@@ -67,6 +77,11 @@ extension ArrayCompanion<T> on Array<T> {
   /// Returns an element at the given index or the result of calling the defaultValue function if the index is out of bounds of this array.
   T? getOrNull(int index, T Function(int) defaultValue) =>
       size < length - 1 ? get(index) : null;
+
+  /// Returns single element, or `null` if the array is empty or has more than one element.
+  T? singleOrNull(Boolean Function(T? it) test) {
+    return cast<T?>().singleWhere(test, orElse: () => null);
+  }
 
   String joinToString({
     String separator = ', ',
@@ -130,7 +145,7 @@ extension ArrayCompanion<T> on Array<T> {
   Iterable<int> withIndex() => indices;
 
   Map<K, V> groupBy<K, V>(
-      K Function(Any) keySelector, V Function(Any)? valueTransform) {
+      K Function(Any?) keySelector, V Function(Any?)? valueTransform) {
     return Map<K, V>.fromIterable(this,
         key: keySelector, value: valueTransform);
   }

@@ -1,6 +1,6 @@
 library kotlin.native;
 
-import '/src/kotlin.dart';
+import '/kotlin.dart';
 
 /// Instructs the Kotlin compiler to use a custom Objective-C and/or Swift name
 /// for this class, property, parameter or function.
@@ -10,7 +10,7 @@ import '/src/kotlin.dart';
   AnnotationTarget.VALUE_PARAMETER,
   AnnotationTarget.FUNCTION,
 ])
-@ExperimentalObjCName
+@experimentalObjCName
 class ObjCName {
   /// Instructs the Kotlin compiler to use a custom Objective-C and/or Swift name 
   /// for this class, property, parameter or function.
