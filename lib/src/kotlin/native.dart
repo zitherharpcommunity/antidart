@@ -2,6 +2,9 @@ library kotlin.native;
 
 import '/kotlin.dart';
 
+export 'native/ref.dart';
+export 'native/runtime.dart';
+
 /// Instructs the Kotlin compiler to use a custom Objective-C and/or Swift name
 /// for this class, property, parameter or function.
 @Target([

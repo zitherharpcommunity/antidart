@@ -1,31 +1,31 @@
 /// Annotations to mark test functions and top-level functions for performing assertions in tests.
 library kotlin.test.common;
 
-import 'package:test/test.dart' as test;
+import 'package:test/test.dart' as t;
 
 import '/kotlin.dart';
 
 /// Marks a function to be executed after a suite.
 ///
 /// Not supported in Kotlin/Common.
-const AfterClass = _AfterClass();
+const afterClass = AfterClass();
 
 /// Marks a function to be invoked after each test.
-const AfterTest = _AfterTest();
+const afterTest = AfterTest();
 
 /// Marks a function to be executed before a suite.
 ///
 /// Not supported in Kotlin/Common.
-const BeforeClass = _BeforeClass();
+const beforeClass = BeforeClass();
 
 /// Marks a function to be invoked before each test.
-const BeforeTest = _BeforeTest();
+const beforeTest = BeforeTest();
 
 /// Marks a test or a suite as ignored.
-const Ignore = _Ignore();
+const ignore = Ignore();
 
 /// Marks a function as a test.
-const Test = _Test();
+const test = Test();
 
 /// Current adapter providing assertion implementations.
 external Asserter get asserter;
@@ -114,7 +114,7 @@ T assertIs<T>(
   Any? value, [
   String? message,
 ]) {
-  test.expect(value, T, reason: message);
+  t.expect(value, T, reason: message);
   return value as T;
 }
 
@@ -127,7 +127,7 @@ Unit assertIsNot<T>(
   Any? value, [
   String? message,
 ]) {
-  return test.expect(value, T, reason: message);
+  return t.expect(value, T, reason: message);
 }
 
 /// Asserts that the difference between the [actual] and the [illegal]
@@ -182,7 +182,7 @@ Unit expect<T>(
   Unit Function() block, {
   String? message,
 }) {
-  test.test(message, block);
+  t.test(message, block);
 }
 
 /// Takes the given [block] of test code and doesn't execute it.
@@ -346,16 +346,16 @@ abstract interface class KotlinTestNamespace {
 @Target([
   AnnotationTarget.ANNOTATION_CLASS,
 ])
-final class _AfterClass {
-  const _AfterClass();
+final class AfterClass {
+  const AfterClass();
 }
 
 /// Marks a function to be invoked before each test.
 @Target([
   AnnotationTarget.FUNCTION,
 ])
-final class _AfterTest {
-  const _AfterTest();
+final class AfterTest {
+  const AfterTest();
 }
 
 /// Marks a function to be executed after a suite.
@@ -364,16 +364,16 @@ final class _AfterTest {
 @Target([
   AnnotationTarget.ANNOTATION_CLASS,
 ])
-final class _BeforeClass {
-  const _BeforeClass();
+final class BeforeClass {
+  const BeforeClass();
 }
 
 /// Marks a function to be invoked before each test.
 @Target([
   AnnotationTarget.FUNCTION,
 ])
-final class _BeforeTest {
-  const _BeforeTest();
+final class BeforeTest {
+  const BeforeTest();
 }
 
 /// Marks a test or a suite as ignored.
@@ -381,14 +381,14 @@ final class _BeforeTest {
   AnnotationTarget.CLASS,
   AnnotationTarget.FUNCTION,
 ])
-final class _Ignore {
-  const _Ignore();
+final class Ignore {
+  const Ignore();
 }
 
 /// Marks a function as a test.
 @Target([
   AnnotationTarget.FUNCTION,
 ])
-final class _Test {
-  const _Test();
+final class Test {
+  const Test();
 }
