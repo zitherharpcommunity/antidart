@@ -11,29 +11,38 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+You don't want to use `Dart` in `Dart`?
+
+You want to use another language in `Dart`?
+
+This _package_ is generated for you!
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- `Kotlin`
+- `Java` (planning)
+- `C#` (planning)
+- `Swift` (planning)
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+- **Note**: Only imports language which you want to use.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+- Kotlin:
 
 ```dart
-const like = 'sample';
+import 'package:antidart/kotlin.dart';
+
+fun main(Array<String> args) {
+  val awesome = 'Awesome!';
+  println('awesome: ${awesome}');
+}
 ```
+
+- See more longer examples in `/example` folder. 
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+- To contribute to this project, you can open an issue at here.

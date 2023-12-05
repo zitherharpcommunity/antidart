@@ -53,16 +53,18 @@ import '/kotlin.dart';
 ///   }
 /// }
 /// ```
-/// In the example above the cleanup lambda implicitly captures this object to call `doSomething()`.
+/// In the example above the cleanup lambda implicitly 
+/// captures this object to call `doSomething()`.
 ///
-/// [cleanupAction] should not use `@ThreadLocal` globals, because it may be executed on a different thread.
+/// [cleanupAction] should not use `@ThreadLocal` globals, 
+/// because it may be executed on a different thread.
 ///
 /// If [cleanupAction] throws an exception, the behavior is unspecified.
 ///
 /// Cleaners cannot be used to perform actions during the program shutdown:
 ///
 /// cleaners that are referenced from globals will not be garbage collected at all,
-/// cleaners that become unreferenced just before exiting main() might not be garbage collected,
+/// cleaners that become unreferenced just before exiting `main()` might not be garbage collected,
 /// because the GC might not get a chance to run.
 ///
 /// Parameters:
@@ -90,7 +92,8 @@ class WeekReference<T extends Any> {
 
   /// Creates a weak reference object pointing to an object.
   ///
-  /// Weak reference doesn't prevent removing object, and is nullified once object is collected.
+  /// Weak reference doesn't prevent removing object, 
+  /// and is nullified once object is collected.
   WeekReference(T referred) {
     _pointer = referred;
   }

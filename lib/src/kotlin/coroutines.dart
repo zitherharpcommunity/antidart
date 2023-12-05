@@ -152,7 +152,7 @@ final class RestrictsSuspension {
   const RestrictsSuspension();
 }
 
-extension ContinuationExtension<T> on Continuation<T> {
+extension CoroutinesContinuationExtension<T> on Continuation<T> {
   /// Resumes the execution of the corresponding coroutine
   /// passing [value] as the return value of the last suspension point.
   fun resume(T value) => Result.success(value);
@@ -162,7 +162,7 @@ extension ContinuationExtension<T> on Continuation<T> {
   fun resumeWithException(Throwable exception) => Result.failure(exception);
 }
 
-extension CoroutineExtension on Any {
+extension CoroutinesAnyExtension on Any {
   /// Calls the specified function [block] with this value as its argument and returns this value.
   T also<T>(Unit Function() block) => throw UnimplementedError();
 
@@ -180,7 +180,7 @@ extension CoroutineExtension on Any {
   R use<R>(R Function(Any it) block) => block(this);
 }
 
-extension ElementExtension on Element {
+extension CoroutinesElementExtension on Element {
   /// Returns the current element if it is associated with the given [key]
   /// in a polymorphic manner or null otherwise.
   ///

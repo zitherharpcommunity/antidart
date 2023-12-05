@@ -47,3 +47,14 @@ abstract interface class Lazy<T> {
   /// Once this function has returned `true` it stays true for the rest of lifetime of this [Lazy] instance.
   Boolean isInitialized();
 }
+
+class RuntimeException implements Exception {
+  final String? message;
+
+  final Throwable? cause;
+
+  const RuntimeException({
+    this.message,
+    this.cause,
+  });
+}

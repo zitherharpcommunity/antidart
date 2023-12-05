@@ -21,6 +21,7 @@ import '/kotlin.dart';
 
 export 'src/kotlin/annotation.dart';
 export 'src/kotlin/browser.dart';
+export 'src/kotlin/cinterop.dart';
 export 'src/kotlin/collections.dart';
 export 'src/kotlin/comparisons.dart';
 export 'src/kotlin/concurrent.dart';

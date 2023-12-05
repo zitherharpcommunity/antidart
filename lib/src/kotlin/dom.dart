@@ -3,9 +3,9 @@ library kotlin.dom;
 
 import 'dart:html';
 
-import '../../kotlin.dart';
+import '/kotlin.dart';
 
-extension ElementUtils on Element {
+extension DomElementExtension on Element {
   /// Adds CSS class to element.
   ///
   /// Has no effect if all specified classes are already in class attribute of the element.
@@ -44,7 +44,7 @@ extension ElementUtils on Element {
   Unit removeClasses(Array<String> cssClasses) => classes.removeAll(cssClasses);
 }
 
-extension NodeUtils on Node {
+extension DomNodeExtension on Node {
   /// Gets a value indicating whether this node is an [Element].
   Boolean get isElement => this is Element;
 
