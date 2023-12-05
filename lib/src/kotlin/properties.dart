@@ -3,10 +3,45 @@
 /// and helper functions for implementing custom delegates.
 library kotlin.properties;
 
-import 'package:antidart/kotlin.dart';
+import '/kotlin.dart';
 
 /// Standard property delegates.
-sealed class Delegates {}
+sealed class Delegates {
+  /// Returns a property delegate for a read/write property
+  /// with a non-null value that is initialized
+  /// not during object construction time but at a later time.
+  ///
+  /// Trying to read the property before the initial value
+  /// has been assigned results in an exception.
+  external static ReadWriteProperty<Any?, T> notNull<T extends Any>();
+
+  /// Returns a property delegate for a read/write property
+  /// that calls a specified callback function when changed.
+  ///
+  /// **Parameters**:
+  /// * [initialValue] - the initial value of the property.
+  /// * [onChange] - the callback which is called after the change of the property is made.
+  /// The value of the property has already been changed when this callback is invoked.
+  external static ReadWriteProperty<Any?, T> observable<T>(
+    T initialValue,
+    Unit Function(KProperty<T> property, T oldValue, T newValue) onChange,
+  );
+
+  /// Returns a property delegate for a read/write property
+  /// that calls a specified callback function when changed,
+  /// allowing the callback to veto the modification.
+  ///
+  /// **Parameters**:
+  /// * [initialValue] - the initial value of the property.
+  /// * [onChange] - the callback which is called before a change to the property value is attempted. 
+  /// The value of the property hasn't been changed yet, when this callback is invoked. 
+  /// If the callback returns true the value of the property is being set to the new value, 
+  /// and if the callback returns false the new value is discarded and the property remains its old value.
+  external static ReadWriteProperty<Any?, T> vetoable<T>(
+    T initialValue,
+    Boolean Function(KProperty<T> property, T oldValue, T newValue) onChange,
+  );
+}
 
 /// Implements the core logic of a property delegate
 /// for a read/write property that calls callback functions when changed.

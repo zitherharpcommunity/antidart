@@ -9,7 +9,7 @@ sealed class TestNGAsserter implements Asserter {}
 final class TestNGContributor implements AsserterContributor {
   /// Provides [TestNGAsserter] if `org.testng.Assert` is found in the classpath.
   const TestNGContributor();
-  
+
   @override
-  Asserter? contribute() => throw UnimplementedError();
+  external Asserter? contribute();
 }

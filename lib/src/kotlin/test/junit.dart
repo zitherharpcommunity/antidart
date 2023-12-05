@@ -11,5 +11,5 @@ final class JUnitContributor implements AsserterContributor {
   const JUnitContributor();
   
   @override
-  Asserter? contribute() => throw UnimplementedError();
+  external Asserter? contribute();
 }

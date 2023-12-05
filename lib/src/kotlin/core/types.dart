@@ -1,10 +1,6 @@
+// ignore_for_file: camel_case_types
+
 part of kotlin.core;
-
-// ignore: camel_case_types
-typedef val<T> = T;
-
-// ignore: camel_case_types
-typedef fun = void;
 
 /// The root of the Kotlin class hierarchy. Every Kotlin class has [Any] as a superclass.
 typedef Any = Object;
@@ -69,6 +65,8 @@ typedef Float = double;
 /// When targeting the JVM, instances of this class are represented as `float[]`.
 typedef FloatArray<T> = Array<Float>;
 
+typedef fun = void;
+
 /// Represents a 32-bit signed integer.
 ///
 /// On the JVM, non-nullable values of this type are represented as values of the primitive type `int`.
@@ -117,6 +115,8 @@ typedef Triple<A, B, C> = (A, B, C);
 
 typedef UByte = int;
 
+typedef UByteArray = Array<UByte>;
+
 typedef UInt = Int;
 
 typedef ULong = Long;
@@ -125,6 +125,12 @@ typedef ULong = Long;
 ///
 /// This type corresponds to the `void` type in Java.
 typedef Unit = void;
+
+typedef UShort = Short;
+
+typedef val<T> = T;
+
+typedef vararg<T> = List<T>;
 
 /// Base interface implicitly implemented by all annotation interfaces.
 ///
@@ -138,11 +144,11 @@ final class Result<T> {
 
   const Result(this.value);
 
-  /// Returns an instance that encapsulates the given [value] as successful value.
-  @JvmName("success")
-  static Result<T> success<T>(T value) => Result(value);
-
   /// Returns an instance that encapsulates the given [Throwable] as failure.
   @JvmName("failure")
   static Result<Throwable> failure(Throwable exception) => Result(exception);
+
+  /// Returns an instance that encapsulates the given [value] as successful value.
+  @JvmName("success")
+  static Result<T> success<T>(T value) => Result(value);
 }

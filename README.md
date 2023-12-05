@@ -11,13 +11,15 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-You don't want to use `Dart` in `Dart`?
+## Description
 
-You want to use another language in `Dart`?
+You don't want to use `Dart` in itself?
 
-This _package_ is generated for you!
+You want to use an another language in `Dart`?
 
-## Features
+**J4F**: This _package_ is generated for you!
+
+## Support languages
 
 - `Kotlin`
 - `Java` (planning)
@@ -26,7 +28,7 @@ This _package_ is generated for you!
 
 ## Getting started
 
-- **Note**: Only imports language which you want to use.
+- **Note**: To avoid conflicts between libraries, _**only**_ import a single language that you want to use.
 
 ## Usage
 
@@ -35,7 +37,7 @@ This _package_ is generated for you!
 ```dart
 import 'package:antidart/kotlin.dart';
 
-fun main(Array<String> args) {
+fun main(vararg<String> args) {
   val awesome = 'Awesome!';
   println('awesome: ${awesome}');
 }
@@ -45,4 +47,4 @@ fun main(Array<String> args) {
 
 ## Additional information
 
-- To contribute to this project, you can open an issue at here.
+- To contribute to this project, you can open an issue at [here](https://github.com/lehoangbaochung/antidart/issues).

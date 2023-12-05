@@ -3,7 +3,7 @@
 /// Runtime API for [Kotlin reflection](https://kotlinlang.org/docs/reference/reflection.html).
 library kotlin.reflect;
 
-import '../../kotlin.dart';
+import '/kotlin.dart';
 
 export 'reflect/full.dart';
 export 'reflect/jvm.dart';
@@ -71,8 +71,8 @@ Type typeOf<T>(T value) => value.runtimeType;
 ///
 /// Type projection is either the star projection, or an entity consisting of a specific type plus optional variance.
 ///
-/// - [type] - The type specified in the projection, or null if this is a star projection.
-/// - [variance] - The use-site variance specified in the projection, or null if this is a star projection.
+/// * [type] - The type specified in the projection, or null if this is a star projection.
+/// * [variance] - The use-site variance specified in the projection, or null if this is a star projection.
 ///
 /// See the [Kotlin language documentation](https://kotlinlang.org/docs/visibility-modifiers.html) for more information.
 typedef KTypeProjection = (KType?, KVariance?);

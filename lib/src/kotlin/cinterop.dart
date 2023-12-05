@@ -1,5 +1,7 @@
 library kotlinx.cinterop;
 
+export 'cinterop/internal.dart';
+
 /// C pointer.
 class CPointer<T extends CPointed> {}
 
@@ -8,3 +10,5 @@ abstract class CPointed {}
 
 /// The pointer with an opaque type.
 typedef COpaquePointer = CPointer<CPointed>;
+
+abstract interface class ObjCObject {}
