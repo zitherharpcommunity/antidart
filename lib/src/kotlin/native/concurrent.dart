@@ -1,6 +1,6 @@
 library kotlin.native.concurrent;
 
-import '/kotlin.dart';
+import '/src/kotlin.dart';
 
 /// Marks all [Worker]-related API as obsolete.
 const obsoleteWorkersApi = ObsoleteWorkersApi();

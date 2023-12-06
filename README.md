@@ -10,14 +10,15 @@ For general information about developing packages, see the Dart guide for
 and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
+# Antidart :no_entry_sign:
 
-## Description
+## Introduction
 
 You don't want to use `Dart` in itself?
 
 You want to use an another language in `Dart`?
 
-**J4F**: This _package_ is generated for you!
+This _package_ is generated for you!
 
 ## Support languages
 
@@ -26,9 +27,24 @@ You want to use an another language in `Dart`?
 - `C#` (planning)
 - `Swift` (planning)
 
+> [!NOTE] 
+> All planning languages are tentative and can be changed in the future.
+
 ## Getting started
 
-- **Note**: To avoid conflicts between libraries, _**only**_ import a single language that you want to use.
+- Run this command to add `antidart` package into your project.
+
+```sh
+dart pub run antidart
+```
+- Then let's import a single language that you want to use like this.
+
+```dart
+import 'package:antidart/<support_language>.dart';
+```
+
+> [!TIP] 
+> To avoid conflicts between libraries, please _**only**_ import a single language that you want to use.
 
 ## Usage
 

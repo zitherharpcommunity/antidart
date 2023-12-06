@@ -1,7 +1,7 @@
 /// Library support for the Kotlin annotation facility.
 library kotlin.annotation;
 
-import '/kotlin.dart';
+import '/src/kotlin.dart';
 
 /// This meta-annotation determines that an annotation is a part of public API
 /// and therefore should be included in the generated documentation

@@ -3,7 +3,7 @@ library kotlin.system;
 
 import 'dart:io';
 
-import 'package:antidart/kotlin.dart';
+import '/src/kotlin.dart';
 
 /// Terminates the currently running process.
 Nothing exitProcess({required Int status}) => exit(status);

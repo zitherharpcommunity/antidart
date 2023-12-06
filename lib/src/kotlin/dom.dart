@@ -3,7 +3,7 @@ library kotlin.dom;
 
 import 'dart:html';
 
-import '/kotlin.dart';
+import '/src/kotlin.dart';
 
 extension DomElementExtension on Element {
   /// Adds CSS class to element.

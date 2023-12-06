@@ -4,13 +4,13 @@ library kotlin.io;
 import 'dart:convert';
 import 'dart:io';
 
-import '../../kotlin.dart';
+import '/src/kotlin.dart';
 
 export '/src/kotlin/io/encoding.dart';
 export '/src/kotlin/io/path.dart';
 
 /// Returns the default buffer size when working with buffered streams.
-const int DEFAULT_BUFFER_SIZE = 8 * 1024;
+const Int DEFAULT_BUFFER_SIZE = 8 * 1024;
 
 /// Creates an empty directory in the specified [directory],
 /// using the given [prefix] and [suffix] to generate its name.
@@ -45,9 +45,6 @@ File createTempFile({
     '${directory?.path ?? ''}/$prefix${suffix ?? ''}',
   );
 }
-
-/// Prints the given [message] to the standard output stream.
-Unit print(Any message) => print(message);
 
 /// Prints the given [message] and the line separator to the standard output stream.
 Unit println(Any message) => print(message);

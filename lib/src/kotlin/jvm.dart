@@ -1,7 +1,7 @@
 /// Functions and annotations specific to the Java platform.
 library kotlin.jvm;
 
-import '/kotlin.dart';
+import '/src/kotlin.dart';
 
 /// Makes the annotation class repeatable in Java and Kotlin.
 ///

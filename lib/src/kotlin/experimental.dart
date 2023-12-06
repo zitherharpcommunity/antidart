@@ -1,7 +1,7 @@
 /// Experimental APIs, subject to change in future versions of Kotlin.
 library kotlin.experimental;
 
-import '/kotlin.dart';
+import '/src/kotlin.dart';
 
 /// This annotation marks the Kotlin/Native-only standard library API
 /// that is considered experimental and is not subject to the

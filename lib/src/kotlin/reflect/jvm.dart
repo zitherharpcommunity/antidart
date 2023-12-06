@@ -2,7 +2,7 @@
 /// and Java reflection provided by kotlin-reflect library.
 library kotlin.reflect.jvm;
 
-import '../../../kotlin.dart';
+import '/src/kotlin.dart';
 
 /// This annotation marks the experimental kotlin-reflect API
 /// that allows to approximate a Kotlin lambda

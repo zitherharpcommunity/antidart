@@ -3,7 +3,7 @@
 /// and helper functions for implementing custom delegates.
 library kotlin.properties;
 
-import '/kotlin.dart';
+import '/src/kotlin.dart';
 
 /// Standard property delegates.
 sealed class Delegates {

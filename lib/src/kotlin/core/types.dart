@@ -128,8 +128,10 @@ typedef Unit = void;
 
 typedef UShort = Short;
 
+/// Declares a read-only property or local variable.
 typedef val<T> = T;
 
+/// Allows passing a variable number of arguments for a parameter.
 typedef vararg<T> = List<T>;
 
 /// Base interface implicitly implemented by all annotation interfaces.

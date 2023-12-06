@@ -1,7 +1,7 @@
 /// Helper functions for creating [Comparator] instances.
 library kotlin.comparisons;
 
-import '../../kotlin.dart';
+import '/src/kotlin.dart';
 
 extension MultiIterableExtension<T> on Iterable<Iterable<T>> {
   String contentDeepToString() => join(', ');

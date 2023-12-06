@@ -3,7 +3,7 @@
 /// Runtime API for [Kotlin reflection](https://kotlinlang.org/docs/reference/reflection.html).
 library kotlin.reflect;
 
-import '/kotlin.dart';
+import '/src/kotlin.dart';
 
 export 'reflect/full.dart';
 export 'reflect/jvm.dart';

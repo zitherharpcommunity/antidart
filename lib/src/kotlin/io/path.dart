@@ -1,6 +1,6 @@
 library kotlin.io.path;
 
-import '/kotlin.dart';
+import '/src/kotlin.dart';
 
 /// This annotation marks the experimental API for [Path] and decoding
 /// between binary data and printable ASCII character sequences.

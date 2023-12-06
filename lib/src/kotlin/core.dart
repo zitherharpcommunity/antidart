@@ -1,7 +1,7 @@
 /// Core functions and types, available on all supported platforms.
 library kotlin.core;
 
-import '/kotlin.dart';
+import '/src/kotlin.dart';
 
 part 'core/annotations.dart';
 part 'core/classes.dart';

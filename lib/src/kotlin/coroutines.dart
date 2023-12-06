@@ -5,7 +5,7 @@ library kotlin.coroutines;
 
 import 'dart:html';
 
-import '/kotlin.dart';
+import '/src/kotlin.dart';
 
 export 'coroutines/cancellation.dart';
 export 'coroutines/intrinsics.dart';

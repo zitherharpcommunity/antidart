@@ -1,6 +1,6 @@
 library kotlin.coroutines.cancellation;
 
-import '/kotlin.dart';
+import '/src/kotlin.dart';
 
 /// Thrown by cancellable suspending functions
 /// if the coroutine is cancelled while it is suspended.

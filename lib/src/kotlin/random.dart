@@ -6,7 +6,7 @@ library kotlin.random;
 
 import 'dart:math' as math;
 
-import '/kotlin.dart';
+import '/src/kotlin.dart';
 
 abstract class Random {
   /// The default random number generator.

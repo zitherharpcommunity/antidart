@@ -2,8 +2,8 @@
 
 library kotlinx.cinterop.internal;
 
-import '/kotlin.dart';
-import '/kotlin.dart' as kt;
+import '/src/kotlin.dart';
+import '/src/kotlin.dart' as kt;
 
 /// Detaches the Objective-C object from this Kotlin wrapper.
 ///

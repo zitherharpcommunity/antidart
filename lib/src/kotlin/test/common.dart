@@ -3,7 +3,7 @@ library kotlin.test.common;
 
 import 'package:test/test.dart' as t;
 
-import '/kotlin.dart';
+import '/src/kotlin.dart';
 
 /// Marks a function to be executed after a suite.
 ///

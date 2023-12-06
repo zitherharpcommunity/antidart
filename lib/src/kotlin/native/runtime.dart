@@ -1,6 +1,6 @@
 library kotlin.native.runtime;
 
-import '/kotlin.dart';
+import '/src/kotlin.dart';
 
 /// This annotation marks the Kotlin/Native standard library API that tweaks
 /// or otherwise accesses the Kotlin runtime behavior.

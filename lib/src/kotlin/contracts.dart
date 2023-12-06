@@ -1,7 +1,7 @@
 /// Experimental DSL for declaring custom function contracts.
 library kotlin.contracts;
 
-import 'package:antidart/kotlin.dart';
+import '/src/kotlin.dart';
 
 /// This marker distinguishes the experimental contract declaration API
 /// and is used to opt-in for that feature when declaring contracts of user functions.

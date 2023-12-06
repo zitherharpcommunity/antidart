@@ -3,7 +3,8 @@
 /// Low-level building blocks for libraries that provide coroutine-based APIs.
 library kotlin.coroutines.intrinsics;
 
-import '/kotlin.dart';
+import '/src/kotlin.dart';
+import '/src/kotlinx.dart';
 
 /// This value is used as a return value of
 /// [suspendCoroutineUninterceptedOrReturn] `block` argument to state

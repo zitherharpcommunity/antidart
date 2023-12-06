@@ -1,6 +1,6 @@
 library kotlin.native;
 
-import '/kotlin.dart';
+import '/src/kotlin.dart';
 
 export 'native/ref.dart';
 export 'native/runtime.dart';

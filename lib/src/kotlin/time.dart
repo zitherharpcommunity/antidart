@@ -5,7 +5,7 @@
 /// For more information, see our [Time measurement](https://kotlinlang.org/docs/time-measurement.html) guide.
 library kotlin.time;
 
-import '/kotlin.dart';
+import '/src/kotlin.dart';
 
 /// This annotation marks the experimental preview of the standard library API
 /// for measuring time and working with durations.

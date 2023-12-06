@@ -1,6 +1,6 @@
 library kotlin.native.ref;
 
-import '/kotlin.dart';
+import '/src/kotlin.dart';
 
 /// Creates a [Cleaner] object that runs [cleanupAction] with given [resource] some time after its deallocation.
 ///
