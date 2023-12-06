@@ -35,7 +35,7 @@ This _package_ is generated for you!
 - Run this command to add `antidart` package into your project.
 
 ```sh
-dart pub run antidart
+dart run antidart
 ```
 - Then let's import a single language that you want to use like this.
 

@@ -15,4 +15,7 @@
 /// See examples at [here](https://play.kotlinlang.org/byExample/overview).
 library kotlin.stdlib;
 
-export '/src/kotlin.dart' if (dart.library.html) '/src/kotlinx.dart';
+export '/src/kotlin/kotlin.dart'
+    if (dart.library.html) '/src/kotlin/kotlinx.dart'
+    if (dart.library.html) '/src/kotlin/org.khronos.dart'
+    if (dart.library.html) '/src/kotlin/org.w3c.dart';
