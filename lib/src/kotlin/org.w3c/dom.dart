@@ -37,3 +37,5 @@ extension DomItemArrayLikeExtension<T> on ItemArrayLike<T> {
   /// Returns the view of this `ItemArrayLike<T>` collection as `List<T>`.
   List<T> asList() => [];
 }
+
+abstract class HTMLFormElement {}

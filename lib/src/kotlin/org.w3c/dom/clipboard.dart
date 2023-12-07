@@ -56,7 +56,7 @@ abstract interface class ClipboardPermissionDescriptor {
   external Boolean? allowWithoutGesture;
 }
 
-abstract interface class EventInit {
+abstract class EventInit {
   Boolean? bubbles;
 
   Boolean? cancelable;
