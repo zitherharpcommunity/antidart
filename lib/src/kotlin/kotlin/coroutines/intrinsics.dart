@@ -4,7 +4,7 @@
 library kotlin.coroutines.intrinsics;
 
 import '/src/kotlin/kotlin.dart';
-import '../../kotlinx.dart';
+import '/src/kotlin/kotlinx.dart';
 
 /// This value is used as a return value of
 /// [suspendCoroutineUninterceptedOrReturn] `block` argument to state

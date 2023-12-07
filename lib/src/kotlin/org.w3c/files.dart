@@ -7,18 +7,20 @@ import '/src/kotlin/kotlin.dart';
 import '/src/kotlin/org.khronos.dart';
 import '/src/kotlin/org.w3c.dart';
 
-class Blob {}
-
-abstract interface class BlobPropertyBag {
-  external String? type;
-}
-
-external BlobPropertyBag blobPropertyBag({String? type = ''});
+external BlobPropertyBag blobPropertyBag({
+  String? type = '',
+});
 
 external FilePropertyBag filePropertyBag({
   String? type = '',
   Int? lastModified,
 });
+
+class Blob {}
+
+abstract interface class BlobPropertyBag {
+  external String? type;
+}
 
 /// Exposes the JavaScript [File](https://developer.mozilla.org/en-US/docs/Web/API/File) to Kotlin
 class File extends Blob {
@@ -39,10 +41,6 @@ class File extends Blob {
   external String get name;
 }
 
-abstract interface class FilePropertyBag extends BlobPropertyBag {
-  external Int? lastModified;
-}
-
 /// Exposes the JavaScript [FileList](https://developer.mozilla.org/en-US/docs/Web/API/FileList) to Kotlin
 abstract class FileList implements ItemArrayLike<File> {
   const FileList();
@@ -53,13 +51,17 @@ abstract class FileList implements ItemArrayLike<File> {
   external File? item(Int index);
 }
 
-extension FilesFileListExtension on FileList {
-  external File? operator [](Int index);
+abstract interface class FilePropertyBag extends BlobPropertyBag {
+  external Int? lastModified;
 }
 
 /// Exposes the JavaScript [FileReader](https://developer.mozilla.org/en-US/docs/Web/API/FileReader) to Kotlin
 class FileReader extends EventTarget {
-  external dynamic get error;
+  external static Short get DONE;
+
+  external static Short get EMPTY;
+
+  external static Short get LOADING;
 
   external dynamic Function(Event)? onabort;
 
@@ -72,6 +74,8 @@ class FileReader extends EventTarget {
   external dynamic Function(Event)? onloadstart;
 
   external dynamic Function(ProgressEvent)? onprogress;
+
+  external dynamic get error;
 
   external Short get readyState;
 
@@ -86,17 +90,11 @@ class FileReader extends EventTarget {
   external fun readAsDataURL(Blob blob);
 
   external fun readAsText(Blob blob, String label);
-
-  external static Short get DONE;
-
-  external static Short get EMPTY;
-
-  external static Short get LOADING;
 }
 
 /// Exposes the JavaScript [FileReaderSync](https://developer.mozilla.org/en-US/docs/Web/API/FileReaderSync) to Kotlin
 class FileReaderSync {
-  const FileReaderSync();  
+  const FileReaderSync();
 
   external ArrayBuffer readAsArrayBuffer(Blob blob);
 
@@ -105,4 +103,8 @@ class FileReaderSync {
   external String readAsDataURL(Blob blob);
 
   external String readAsText(Blob blob, String label);
+}
+
+extension FilesFileListExtension on FileList {
+  external File? operator [](Int index);
 }

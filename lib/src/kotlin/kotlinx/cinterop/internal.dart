@@ -4,7 +4,7 @@ library kotlinx.cinterop.internal;
 
 import '/src/kotlin/kotlin.dart';
 import '/src/kotlin/kotlin.dart' as kt;
-import '/src/kotlin/kotlinx.dart';
+import '/src/kotlin/kotlinx/cinterop.dart';
 
 /// Detaches the Objective-C object from this Kotlin wrapper.
 ///

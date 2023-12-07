@@ -2,7 +2,7 @@
 library org.w3c.dom.url;
 
 import '/src/kotlin/kotlin.dart';
-import '../../org.w3c.dart';
+import '/src/kotlin/org.w3c.dart';
 
 /// Exposes the JavaScript [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL) to Kotlin
 class URL {
