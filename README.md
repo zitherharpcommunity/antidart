@@ -37,7 +37,12 @@ This _package_ is generated for you!
 ```sh
 dart run antidart
 ```
-- Then let's import a single language that you want to use like this.
+- Check this line in your `pubspec.yaml` file if it's not exist.
+```yaml
+dependencies:
+  antidart: ^<latest_version>
+```
+- Import a programming language that you want to use like this.
 
 ```dart
 import 'package:antidart/<support_language>.dart';

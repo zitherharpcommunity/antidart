@@ -5,7 +5,7 @@ library org.w3c.dom.pointerevents;
 import 'dart:html';
 
 import '/src/kotlin/kotlin.dart';
-import '../../org.w3c.dart';
+import '/src/kotlin/org.w3c.dart';
 
 /// Exposes the JavaScript [PointerEvent](https//developer.mozilla.org/en-US/docs/Web/API/PointerEvent) to Kotlin
 class PointerEvent extends MouseEvent {

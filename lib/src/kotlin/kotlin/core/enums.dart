@@ -1,4 +1,4 @@
-part of kotlin.core;
+part of '/src/kotlin/kotlin/core.dart';
 
 /// Possible levels of a deprecation.
 ///

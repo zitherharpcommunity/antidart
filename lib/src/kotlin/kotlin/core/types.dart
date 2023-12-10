@@ -1,6 +1,6 @@
 // ignore_for_file: camel_case_types
 
-part of kotlin.core;
+part of '/src/kotlin/kotlin/core.dart';
 
 /// The root of the Kotlin class hierarchy. Every Kotlin class has [Any] as a superclass.
 typedef Any = Object;

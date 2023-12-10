@@ -1,9 +1,7 @@
-// ignore_for_file: non_constant_identifier_names
-
 library org.w3c.dom.clipboard;
 
 import '/src/kotlin/kotlin.dart';
-import '../../org.w3c.dart';
+import '/src/kotlin/org.w3c.dart';
 
 external ClipboardEventInit clipboardEventInit({
   DataTransfer? clipboardData,
@@ -30,14 +28,6 @@ class Clipboard extends EventTarget {
 }
 
 class ClipboardEvent extends Event {
-  external static Short get AT_TARGET;
-
-  external static Short get BUBBLING_PHASE;
-
-  external static Short get CAPTURING_PHASE;
-
-  external static Short get NONE;
-
   final ClipboardEventInit? eventInitDict;
 
   const ClipboardEvent({

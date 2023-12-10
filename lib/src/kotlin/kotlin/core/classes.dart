@@ -1,4 +1,4 @@
-part of kotlin.core;
+part of '/src/kotlin/kotlin/core.dart';
 
 /// Represents a version of the Kotlin standard library.
 ///
@@ -13,6 +13,7 @@ final class KotlinVersion {
 
   /// Maximum value a version component can have, a constant value 255.
   static const Int MAX_COMPONENT_VALUE = 255;
+  
   final Int major;
 
   final Int minor;

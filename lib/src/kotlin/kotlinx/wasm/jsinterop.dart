@@ -1,0 +1,1 @@
+library kotlinx.wasm.jsinterop;

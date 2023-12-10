@@ -4,6 +4,7 @@ import '/src/kotlin/kotlin.dart';
 import '/src/kotlin/org.w3c.dart';
 
 export 'dom/clipboard.dart';
+export 'dom/encryptedmedia.dart';
 export 'dom/events.dart';
 export 'dom/mediasource.dart';
 export 'dom/parsing.dart';

@@ -1,4 +1,4 @@
-part of kotlin.core;
+part of '/src/kotlin/kotlin/core.dart';
 
 /// This annotation marks the standard library API that is considered experimental
 /// and is not subject to the [general compatibility guarantees](https://kotlinlang.org/docs/components-stability.html)

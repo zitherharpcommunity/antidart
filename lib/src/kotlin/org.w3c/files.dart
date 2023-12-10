@@ -16,7 +16,31 @@ external FilePropertyBag filePropertyBag({
   Int? lastModified,
 });
 
-class Blob {}
+/// Exposes the JavaScript [Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob) to Kotlin
+class Blob {
+  final Array<dynamic> blocParts;
+
+  final BlobPropertyBag options;
+
+  external final Boolean isClosed;
+
+  external final Number size;
+
+  external final String type;
+
+  const Blob({
+    required this.blocParts,
+    required this.options,
+  });
+
+  external fun close();
+
+  external Blob slice({
+    required Int start,
+    required Int end,
+    required String contentType,
+  });
+}
 
 abstract interface class BlobPropertyBag {
   external String? type;
@@ -30,22 +54,25 @@ class File extends Blob {
 
   final FilePropertyBag options;
 
-  File({
+  external final Int lastModified;
+
+  external final String name;
+
+  const File({
     required this.fileBits,
     required this.fileName,
     required this.options,
-  });
-
-  external Int get lastModified;
-
-  external String get name;
+  }) : super(
+          blocParts: fileBits,
+          options: options,
+        );
 }
 
 /// Exposes the JavaScript [FileList](https://developer.mozilla.org/en-US/docs/Web/API/FileList) to Kotlin
 abstract class FileList implements ItemArrayLike<File> {
-  const FileList();
+  external final Int length;
 
-  external Int get length;
+  const FileList();
 
   @override
   external File? item(Int index);
@@ -75,11 +102,11 @@ class FileReader extends EventTarget {
 
   external dynamic Function(ProgressEvent)? onprogress;
 
-  external dynamic get error;
+  external final dynamic error;
 
-  external Short get readyState;
+  external final Short readyState;
 
-  external dynamic get result;
+  external final dynamic result;
 
   external fun abort();
 

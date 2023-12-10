@@ -9,6 +9,8 @@ extension MultiIterableExtension<T> on Iterable<Iterable<T>> {
   Iterable<T> flatten() => expand((element) => element);
 }
 
+typedef Comparator<T> = Comparable<T>;
+
 extension NumbersExtension on Iterable<double> {
   double sum() => reduce((value, element) => value + element);
 }
@@ -57,7 +59,7 @@ T maxOf<T extends Comparable<T>>(
         max = other;
       }
     } else {
-      if (comparator(max, other) < 0) {
+      if (max > other) {
         max = other;
       }
     }
@@ -79,10 +81,16 @@ T minOf<T extends Comparable<T>>(
         min = other;
       }
     } else {
-      if (comparator(min, other) > 0) {
+      if (other > min) {
         min = other;
       }
     }
   }
   return min;
 }
+
+/// Returns a comparator that compares [Comparable] objects in natural order.
+/// 
+/// The natural order of a [Comparable] type here 
+/// means the order established by its `compareTo` function.
+external Comparator<T> naturalOrder<T>();
